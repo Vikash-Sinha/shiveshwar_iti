@@ -74,14 +74,75 @@
     .facility h3 { color: var(--navy); font-size: 1rem; margin: 0 0 5px; }
     .facility p { color: var(--muted); font-size: .88rem; margin: 0; }
     .gallery-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 205px 205px; gap: 16px; }
+    .gallery-tile {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.gallery-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+/* Make gallery images clickable */
+.gallery-tile img {
+  cursor: pointer;
+}
+
+/* Full-screen image viewer */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 38px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+
     .gallery-tile { position: relative; overflow: hidden; border-radius: 18px; background: linear-gradient(135deg, #dce8f2, #b9cddd); display: flex; align-items: end; padding: 20px; color: var(--navy); }
     .gallery-tile:first-child { grid-row: span 2; background: linear-gradient(145deg, #cbdce9, #8eacc7); }
     .gallery-tile:nth-child(2) { background: linear-gradient(145deg, #f2dfbd, #e4bd7f); }
     .gallery-tile:nth-child(3) { background: linear-gradient(145deg, #d8e6d9, #9bbca2); }
     .gallery-tile:nth-child(4) { background: linear-gradient(145deg, #d9d7ec, #aaa7d2); }
     .gallery-tile:nth-child(5) { background: linear-gradient(145deg, #e9d9d1, #c9a99a); }
-    .gallery-tile:before { content: ""; position: absolute; width: 180px; height: 180px; border: 1px solid rgba(16,36,58,.12); border-radius: 50%; right: -45px; top: -55px; }
-    .gallery-tile:after { content: "＋"; position: absolute; right: 20px; top: 15px; font-size: 1.5rem; opacity: .5; }
     .gallery-label { position: relative; z-index: 1; background: rgba(255,255,255,.78); backdrop-filter: blur(8px); border-radius: 10px; padding: 9px 13px; font-weight: 800; font-size: .88rem; }
     .gallery-note { color: var(--muted); font-size: .85rem; text-align: center; margin-top: 17px; }
     .admission { background: var(--navy); color: white; }
@@ -137,6 +198,11 @@
       <span>Admissions Open · Vocational Training</span>
     </div>
   </div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full-size image viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img id="lightboxImage" src="" alt="Full-size campus photograph">
+</div>
 
   <header>
     <div class="container nav">
@@ -237,13 +303,32 @@
           <h2>Campus &amp; facilities</h2>
           <p>A glimpse of the learning spaces at Shiveshwar Pvt. ITI. Campus photographs can be added here as they become available.</p>
         </div>
-        <!-- Replace each tile with an <img src="images/your-photo.jpg" alt="..."> when real photos are ready. -->
+       <!-- Replace image paths with actual photos when available. -->
         <div class="gallery-grid">
-          <div class="gallery-tile"><span class="gallery-label">Campus Building</span></div>
-          <div class="gallery-tile"><span class="gallery-label">Classrooms</span></div>
-          <div class="gallery-tile"><span class="gallery-label">Practical Workshop</span></div>
-          <div class="gallery-tile"><span class="gallery-label">Computer Lab</span></div>
-          <div class="gallery-tile"><span class="gallery-label">Library</span></div>
+          <div class="gallery-tile">
+            <img src="images/campus.jpeg" alt="Shiveshwar Pvt ITI Campus Building">
+            <span class="gallery-label">Campus Building</span>
+          </div>
+
+          <div class="gallery-tile">
+            <img src="images/classroom.png" alt="Classrooms">
+            <span class="gallery-label">Classrooms</span>
+          </div>
+
+          <div class="gallery-tile">
+            <img src="images/electrician-training.png" alt="Practical Training Workshop">
+            <span class="gallery-label">Practical Workshop</span>
+          </div>
+
+          <div class="gallery-tile">
+            <img src="images/computer_lab.png" alt="Computer Lab">
+            <span class="gallery-label">Computer Lab</span>
+          </div>
+
+          <div class="gallery-tile">
+            <img src="images/library.png" alt="Library">
+            <span class="gallery-label">Library</span>
+          </div>
         </div>
         <p class="gallery-note">Gallery placeholders — replace with actual campus and facility photographs before publishing.</p>
       </div>
@@ -274,9 +359,21 @@
             <div class="contact-line"><span aria-hidden="true">🗓️</span><div><strong>Course duration</strong><span>2 years · Minimum qualification: Class 10</span></div></div>
           </div>
           <div class="contact-card">
-            <h3>Admission enquiry</h3>
-            <p class="contact-placeholder">Phone number, email address and admission contact details have not been provided yet. Add the institute's verified contact information here before publishing.</p>
-            <!-- Add a verified phone number or email here when the client supplies it. -->
+            <h3>Admission Enquiry</h3>
+            <p>
+              Interested in joining our institute? Call us for admission details,
+              course information, eligibility, and fees. You can also visit our
+              campus for more information.
+            </p>
+
+            <p>
+              <strong>📞 Mobile:</strong>
+              <a href="tel:9536309555">9536309555</a>
+            </p>
+
+            <a href="tel:9536309555" class="contact-button">
+              Call for Admission
+            </a>
           </div>
         </div>
       </div>
@@ -291,6 +388,40 @@
   </footer>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+
+document.querySelectorAll(".gallery-tile img").forEach((img) => {
+  img.addEventListener("click", () => {
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+});
+
   </script>
 </body>
 </html>
