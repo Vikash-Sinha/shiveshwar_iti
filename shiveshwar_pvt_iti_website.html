@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shiveshwar Pvt. ITI, Khiriya Ghat, Bettiah, Bihar. Explore Electrician and Fitter vocational training courses." />
+  <title>Shiveshwar Pvt. ITI | Skill. Learn. Build.</title>
+  <style>
+    :root {
+      --navy: #10243a;
+      --blue: #174f86;
+      --orange: #f2a23a;
+      --cream: #f7f8fa;
+      --ink: #172435;
+      --muted: #647386;
+      --white: #fff;
+      --line: #e4eaf0;
+      --radius: 18px;
+      --shadow: 0 12px 32px rgba(16,36,58,.09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .topbar { background: var(--navy); color: #eaf2fb; font-size: .88rem; padding: 9px 0; }
+    .topbar .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    header { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--navy); letter-spacing: -.02em; }
+    .brand-mark { display: grid; place-items: center; width: 48px; height: 48px; background: var(--blue); color: white; border-radius: 14px; font-weight: 900; font-size: 1.15rem; }
+    .brand small { display: block; color: var(--muted); font-size: .72rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 25px; color: #33465d; font-size: .95rem; font-weight: 650; }
+    nav a:hover { color: var(--blue); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; padding: 12px 20px; background: var(--orange); color: #18283a; font-weight: 800; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(242,162,58,.25); }
+    .hero { background: linear-gradient(120deg, #10243a 0%, #174f86 72%, #246da4 100%); color: white; overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 44px; padding: 76px 0 82px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #ffd28a; font-size: .82rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 800; }
+    .eyebrow:before { content: ""; width: 25px; height: 2px; background: var(--orange); }
+    h1 { margin: 15px 0 18px; font-size: clamp(2.4rem, 5.5vw, 4.65rem); line-height: 1.04; letter-spacing: -.045em; }
+    .hero p { max-width: 590px; color: #dbe8f5; font-size: 1.08rem; margin: 0 0 28px; }
+    .hero .button { margin-right: 12px; }
+    .button-outline { display: inline-flex; border: 1px solid rgba(255,255,255,.45); color: white; border-radius: 999px; padding: 11px 19px; font-weight: 750; }
+    .hero-visual { position: relative; min-height: 340px; display: grid; place-items: center; }
+    .hero-card { width: min(100%, 440px); aspect-ratio: 1.16; border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.04)); border: 1px solid rgba(255,255,255,.25); display: grid; place-items: center; text-align: center; padding: 32px; position: relative; overflow: hidden; }
+    .hero-card:before, .hero-card:after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; width: 360px; height: 360px; }
+    .hero-card:after { width: 250px; height: 250px; }
+    .hero-illustration { position: relative; z-index: 1; font-size: 5.5rem; line-height: 1; }
+    .hero-card strong { display: block; font-size: 1.35rem; margin-top: 15px; }
+    .hero-card span { color: #dbe8f5; font-size: .9rem; }
+    .stats { background: #fff; box-shadow: var(--shadow); border-radius: var(--radius); display: grid; grid-template-columns: repeat(3, 1fr); margin-top: -28px; position: relative; z-index: 2; }
+    .stat { padding: 24px; text-align: center; border-right: 1px solid var(--line); }
+    .stat:last-child { border: 0; }
+    .stat strong { display: block; color: var(--blue); font-size: 1.55rem; line-height: 1.25; }
+    .stat span { color: var(--muted); font-size: .88rem; }
+    section { padding: 82px 0; }
+    .section-head { max-width: 680px; margin: 0 auto 38px; text-align: center; }
+    .section-kicker { color: var(--blue); text-transform: uppercase; letter-spacing: .12em; font-weight: 850; font-size: .78rem; }
+    h2 { color: var(--navy); font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15; letter-spacing: -.035em; margin: 10px 0 14px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .courses { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .course-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: white; transition: transform .2s, box-shadow .2s; }
+    .course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .course-icon { width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; background: #eaf2fb; font-size: 1.8rem; margin-bottom: 18px; }
+    .course-card h3 { margin: 0 0 8px; color: var(--navy); font-size: 1.4rem; }
+    .course-card p { margin: 0 0 20px; color: var(--muted); }
+    .course-meta { display: flex; flex-wrap: wrap; gap: 9px; }
+    .pill { background: #f1f5f9; color: #344a61; border-radius: 999px; padding: 7px 12px; font-size: .82rem; font-weight: 750; }
+    .facilities { background: var(--cream); }
+    .facility-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .facility { background: white; border: 1px solid #e9edf2; border-radius: 16px; padding: 23px 18px; }
+    .facility .icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .facility h3 { color: var(--navy); font-size: 1rem; margin: 0 0 5px; }
+    .facility p { color: var(--muted); font-size: .88rem; margin: 0; }
+    .gallery-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 205px 205px; gap: 16px; }
+    .gallery-tile { position: relative; overflow: hidden; border-radius: 18px; background: linear-gradient(135deg, #dce8f2, #b9cddd); display: flex; align-items: end; padding: 20px; color: var(--navy); }
+    .gallery-tile:first-child { grid-row: span 2; background: linear-gradient(145deg, #cbdce9, #8eacc7); }
+    .gallery-tile:nth-child(2) { background: linear-gradient(145deg, #f2dfbd, #e4bd7f); }
+    .gallery-tile:nth-child(3) { background: linear-gradient(145deg, #d8e6d9, #9bbca2); }
+    .gallery-tile:nth-child(4) { background: linear-gradient(145deg, #d9d7ec, #aaa7d2); }
+    .gallery-tile:nth-child(5) { background: linear-gradient(145deg, #e9d9d1, #c9a99a); }
+    .gallery-tile:before { content: ""; position: absolute; width: 180px; height: 180px; border: 1px solid rgba(16,36,58,.12); border-radius: 50%; right: -45px; top: -55px; }
+    .gallery-tile:after { content: "＋"; position: absolute; right: 20px; top: 15px; font-size: 1.5rem; opacity: .5; }
+    .gallery-label { position: relative; z-index: 1; background: rgba(255,255,255,.78); backdrop-filter: blur(8px); border-radius: 10px; padding: 9px 13px; font-weight: 800; font-size: .88rem; }
+    .gallery-note { color: var(--muted); font-size: .85rem; text-align: center; margin-top: 17px; }
+    .admission { background: var(--navy); color: white; }
+    .admission-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .admission h2 { color: white; margin: 0 0 10px; }
+    .admission p { color: #d5e2ef; margin: 0; max-width: 650px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+    .contact-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+    .contact-card h3 { color: var(--navy); margin: 0 0 18px; }
+    .contact-line { display: flex; gap: 12px; margin: 13px 0; color: #42566c; }
+    .contact-line strong { display: block; color: var(--navy); }
+    .contact-line span { display: block; font-size: .9rem; }
+    .contact-placeholder { color: var(--muted); background: var(--cream); border-radius: 12px; padding: 20px; font-size: .92rem; }
+    footer { background: #0b1a2b; color: #d0dce8; padding: 26px 0; font-size: .88rem; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 850px) {
+      nav { gap: 14px; font-size: .88rem; }
+      .hero-inner { grid-template-columns: 1fr; padding: 58px 0 65px; gap: 25px; }
+      .hero-visual { min-height: 250px; }
+      .hero-card { max-width: 400px; }
+      .facility-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 175px); }
+      .gallery-tile:first-child { grid-row: auto; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .topbar .container { justify-content: center; text-align: center; }
+      .nav { min-height: 68px; flex-wrap: wrap; padding: 10px 0; }
+      nav { width: 100%; justify-content: space-between; order: 3; padding-bottom: 5px; }
+      .nav-cta { padding: 9px 14px; font-size: .86rem; }
+      .brand-mark { width: 42px; height: 42px; }
+      .hero-inner { padding: 48px 0 58px; }
+      h1 { font-size: 2.65rem; }
+      .hero-card { aspect-ratio: 1.25; padding: 20px; }
+      .hero-illustration { font-size: 4.2rem; }
+      .stats { grid-template-columns: 1fr; margin-top: -20px; }
+      .stat { border-right: 0; border-bottom: 1px solid var(--line); padding: 17px; }
+      section { padding: 62px 0; }
+      .courses, .contact-grid { grid-template-columns: 1fr; }
+      .facility-grid { gap: 10px; }
+      .facility { padding: 18px 14px; }
+      .gallery-grid { gap: 10px; grid-template-rows: repeat(3, 145px); }
+      .gallery-tile { padding: 12px; }
+      .gallery-label { font-size: .76rem; padding: 7px 9px; }
+      .admission-inner { align-items: start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>📍 Khiriya Ghat, Bettiah, West Champaran, Bihar</span>
+      <span>Admissions Open · Vocational Training</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Shiveshwar Pvt. ITI home">
+        <span class="brand-mark">S</span>
+        <span>Shiveshwar Pvt. ITI<small>Skill. Learn. Build.</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#courses">Courses</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#campus">Campus</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Enquire Now ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" style="padding:0">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Build skills for your future</span>
+          <h1>Learn a skill.<br>Build your future.</h1>
+          <p>Practical, career-focused vocational training at Shiveshwar Pvt. ITI. Develop technical skills through classroom learning and hands-on workshop practice.</p>
+          <a class="button" href="#courses">Explore Courses</a>
+          <a class="button-outline" href="#contact">Admission Enquiry</a>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div>
+              <div class="hero-illustration" aria-hidden="true">🛠️</div>
+              <strong>Learn by doing</strong>
+              <span>Technical training • Practical learning • Career skills</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats" aria-label="College highlights">
+        <div class="stat"><strong>2024</strong><span>Established</span></div>
+        <div class="stat"><strong>2 Years</strong><span>Course duration</span></div>
+        <div class="stat"><strong>Class 10</strong><span>Minimum qualification</span></div>
+      </div>
+    </div>
+
+    <section id="courses">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Our trades</span>
+          <h2>Choose your technical path</h2>
+          <p>Build a strong foundation with structured learning and practical training in your chosen trade.</p>
+        </div>
+        <div class="courses">
+          <article class="course-card">
+            <div class="course-icon" aria-hidden="true">⚡</div>
+            <h3>Electrician</h3>
+            <p>Learn electrical fundamentals, wiring practices, electrical equipment, safety procedures and hands-on troubleshooting.</p>
+            <div class="course-meta">
+              <span class="pill">Duration: 2 years</span>
+              <span class="pill">Minimum: Class 10</span>
+            </div>
+          </article>
+          <article class="course-card">
+            <div class="course-icon" aria-hidden="true">⚙️</div>
+            <h3>Fitter</h3>
+            <p>Develop practical skills in fitting, measurement, hand tools, workshop practices, assembly and basic maintenance.</p>
+            <div class="course-meta">
+              <span class="pill">Duration: 2 years</span>
+              <span class="pill">Minimum: Class 10</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="facilities" id="facilities">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Learning environment</span>
+          <h2>Facilities for practical learning</h2>
+          <p>Spaces and resources designed to support classroom education and hands-on skill development.</p>
+        </div>
+        <div class="facility-grid">
+          <article class="facility"><div class="icon" aria-hidden="true">🏫</div><h3>Classrooms</h3><p>Learn concepts and technical fundamentals in a classroom setting.</p></article>
+          <article class="facility"><div class="icon" aria-hidden="true">🔧</div><h3>Practical Workshops</h3><p>Build hands-on experience with trade-related tools and activities.</p></article>
+          <article class="facility"><div class="icon" aria-hidden="true">💻</div><h3>Computer Lab</h3><p>Use computers to support learning and digital skills.</p></article>
+          <article class="facility"><div class="icon" aria-hidden="true">📚</div><h3>Library</h3><p>Access learning materials and references for study.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="campus">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Take a look around</span>
+          <h2>Campus &amp; facilities</h2>
+          <p>A glimpse of the learning spaces at Shiveshwar Pvt. ITI. Campus photographs can be added here as they become available.</p>
+        </div>
+        <!-- Replace each tile with an <img src="images/your-photo.jpg" alt="..."> when real photos are ready. -->
+        <div class="gallery-grid">
+          <div class="gallery-tile"><span class="gallery-label">Campus Building</span></div>
+          <div class="gallery-tile"><span class="gallery-label">Classrooms</span></div>
+          <div class="gallery-tile"><span class="gallery-label">Practical Workshop</span></div>
+          <div class="gallery-tile"><span class="gallery-label">Computer Lab</span></div>
+          <div class="gallery-tile"><span class="gallery-label">Library</span></div>
+        </div>
+        <p class="gallery-note">Gallery placeholders — replace with actual campus and facility photographs before publishing.</p>
+      </div>
+    </section>
+
+    <section class="admission">
+      <div class="container admission-inner">
+        <div>
+          <h2>Start building your skills</h2>
+          <p>Interested in Electrician or Fitter training? Contact the institute for admission details, eligibility confirmation and the current admission process.</p>
+        </div>
+        <a class="button" href="#contact">Enquire about admission ↗</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Get in touch</span>
+          <h2>Visit or contact us</h2>
+          <p>We welcome enquiries from students and families interested in vocational training.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Shiveshwar Pvt. ITI</h3>
+            <div class="contact-line"><span aria-hidden="true">📍</span><div><strong>Address</strong><span>Near Subhash Chowk, Khiriya Ghat,<br>Bettiah, West Champaran, Bihar – 845438</span></div></div>
+            <div class="contact-line"><span aria-hidden="true">🎓</span><div><strong>Trades</strong><span>Electrician · Fitter</span></div></div>
+            <div class="contact-line"><span aria-hidden="true">🗓️</span><div><strong>Course duration</strong><span>2 years · Minimum qualification: Class 10</span></div></div>
+          </div>
+          <div class="contact-card">
+            <h3>Admission enquiry</h3>
+            <p class="contact-placeholder">Phone number, email address and admission contact details have not been provided yet. Add the institute's verified contact information here before publishing.</p>
+            <!-- Add a verified phone number or email here when the client supplies it. -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year">2026</span> Shiveshwar Pvt. ITI. All rights reserved.</span>
+      <span>Skill. Learn. Build.</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
