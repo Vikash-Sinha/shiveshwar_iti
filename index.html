@@ -18,6 +18,42 @@
       --radius: 18px;
       --shadow: 0 12px 32px rgba(16,36,58,.09);
     }
+    
+.hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 36, 58, 0.90) 0%,
+      rgba(16, 36, 58, 0.72) 55%,
+      rgba(16, 36, 58, 0.35) 100%
+    ),
+    url("images/hero-background.jpeg") center center / cover no-repeat;
+  color: white;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 0;
+  padding: 85px 0 95px;
+}
+
+.hero-inner > div:first-child {
+  max-width: 720px;
+}
+
+.hero p {
+  max-width: 590px;
+  color: #f0f5fa;
+  font-size: 1.08rem;
+  margin: 0 0 28px;
+}
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; }
@@ -32,21 +68,11 @@
     nav a:hover { color: var(--blue); }
     .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; padding: 12px 20px; background: var(--orange); color: #18283a; font-weight: 800; cursor: pointer; transition: transform .2s, box-shadow .2s; }
     .nav-cta:hover, .button:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(242,162,58,.25); }
-    .hero { background: linear-gradient(120deg, #10243a 0%, #174f86 72%, #246da4 100%); color: white; overflow: hidden; }
-    .hero-inner { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 44px; padding: 76px 0 82px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #ffd28a; font-size: .82rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 800; }
     .eyebrow:before { content: ""; width: 25px; height: 2px; background: var(--orange); }
     h1 { margin: 15px 0 18px; font-size: clamp(2.4rem, 5.5vw, 4.65rem); line-height: 1.04; letter-spacing: -.045em; }
-    .hero p { max-width: 590px; color: #dbe8f5; font-size: 1.08rem; margin: 0 0 28px; }
     .hero .button { margin-right: 12px; }
     .button-outline { display: inline-flex; border: 1px solid rgba(255,255,255,.45); color: white; border-radius: 999px; padding: 11px 19px; font-weight: 750; }
-    .hero-visual { position: relative; min-height: 340px; display: grid; place-items: center; }
-    .hero-card { width: min(100%, 440px); aspect-ratio: 1.16; border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.04)); border: 1px solid rgba(255,255,255,.25); display: grid; place-items: center; text-align: center; padding: 32px; position: relative; overflow: hidden; }
-    .hero-card:before, .hero-card:after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; width: 360px; height: 360px; }
-    .hero-card:after { width: 250px; height: 250px; }
-    .hero-illustration { position: relative; z-index: 1; font-size: 5.5rem; line-height: 1; }
-    .hero-card strong { display: block; font-size: 1.35rem; margin-top: 15px; }
-    .hero-card span { color: #dbe8f5; font-size: .9rem; }
     .stats { background: #fff; box-shadow: var(--shadow); border-radius: var(--radius); display: grid; grid-template-columns: repeat(3, 1fr); margin-top: -28px; position: relative; z-index: 2; }
     .stat { padding: 24px; text-align: center; border-right: 1px solid var(--line); }
     .stat:last-child { border: 0; }
@@ -211,23 +237,24 @@
   </header>
 
   <main>
-    <section class="hero" id="home" style="padding:0">
+    <section class="hero" id="home" style="padding: 0">
       <div class="container hero-inner">
         <div>
           <span class="eyebrow">Build skills for your future</span>
-          <h1>Learn a skill.<br>Build your future.</h1>
-          <p>Practical, career-focused vocational training at Shiveshwar Pvt ITI. Develop technical skills through classroom learning and hands-on workshop practice.</p>
+    
+          <h1>
+            Learn a skill.<br>
+            Build your future.
+          </h1>
+    
+          <p>
+            Practical, career-focused vocational training at Shiveshwar Pvt ITI.
+            Develop technical skills through classroom learning and hands-on
+            workshop practice.
+          </p>
+    
           <a class="button" href="#courses">Explore Courses</a>
           <a class="button-outline" href="#contact">Admission Enquiry</a>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-card">
-            <div>
-              <div class="hero-illustration" aria-hidden="true">🛠️</div>
-              <strong>Learn by doing</strong>
-              <span>Technical training • Practical learning • Career skills</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
