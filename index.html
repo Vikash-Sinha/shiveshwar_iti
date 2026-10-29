@@ -34,19 +34,20 @@
   display: flex;
   align-items: center;
 }
-
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1.5fr 0.8fr;
   align-items: center;
-  gap: 0;
-  padding: 85px 0 95px;
+  gap: 55px;
+  padding: 75px 0;
 }
-
 .hero-inner > div:first-child {
   max-width: 720px;
+  max-width: 720px;
 }
-
+.hero-content {
+  max-width: 720px;
+}
 .hero p {
   max-width: 590px;
   color: #f0f5fa;
@@ -237,15 +238,14 @@
   </header>
 
   <main>
-    <section class="hero" id="home" style="padding: 0">
+    <section class="hero" id="home">
       <div class="container hero-inner">
-        <div>
+    
+        <!-- Left side: Main content -->
+        <div class="hero-content">
           <span class="eyebrow">Build skills for your future</span>
     
-          <h1>
-            Learn a skill.<br>
-            Build your future.
-          </h1>
+          <h1>Learn a skill.<br>Build your future.</h1>
     
           <p>
             Practical, career-focused vocational training at Shiveshwar Pvt ITI.
@@ -256,6 +256,28 @@
           <a class="button" href="#courses">Explore Courses</a>
           <a class="button-outline" href="#contact">Admission Enquiry</a>
         </div>
+    
+        <!-- Right side: Contact information -->
+        <div class="hero-contact">
+          <div class="contact-icon">📍</div>
+          <h3>Visit Our Campus</h3>
+          <p>
+            Near Subhash Chowk, Khiriya Ghat,<br>
+            Bettiah, West Champaran,<br>
+            Bihar – 845438
+          </p>
+    
+          <div class="contact-divider"></div>
+    
+          <div class="contact-icon">📞</div>
+          <h3>Admission Enquiry</h3>
+          <p>Have questions about our courses?</p>
+    
+          <a href="tel:9536309555" class="contact-phone">
+            +91 95363 09555
+          </a>
+        </div>
+    
       </div>
     </section>
 
